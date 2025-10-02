@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+body { font-style: italic; background: linear-gradient(to bottom, #cceeff, #99ddff); color: #003366; }
+.list-group-item { font-style: italic; }
+h2 { font-style: italic; }
+</style>
+
+<div class="text-center">
+    <h2 class="mb-3">📅 Budget Status for {{ month_display }}</h2>
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item">💰 Budget Limit: <strong>{{ budget }}</strong></li>
+                <li class="list-group-item">💸 Spent: <strong>{{ spent }}</strong></li>
+                <li class="list-group-item">🤑 Remaining: <strong>{{ remaining }}</strong></li>
+            </ul>
+        </div>
+    </div>
+    <p class="fs-4 fw-bold">{{ status }}</p>
+    <img src="{{ url_for('static', filename='images/' + img) }}" alt="Budget Status" class="img-fluid" style="max-width: 300px;">
+</div>
+{% endblock %}
